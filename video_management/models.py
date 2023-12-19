@@ -14,6 +14,7 @@ class BaseModel(models.Model):
 class Video(BaseModel):
     file_name = models.CharField(max_length=80, null=False)
     file_content = models.FileField(upload_to='uploads/')
+    file_path = models.CharField(max_length=150)
 
     def delete(self, *args, **kwargs):
         if self.file_content:
